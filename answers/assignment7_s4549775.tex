@@ -1,5 +1,7 @@
 \documentclass[12pt, a4paper]{article}
 
+\usepackage{amsmath}
+
 \usepackage{enumerate}
 
 \setlength\parskip{1em}
@@ -24,6 +26,28 @@
 \section{} %3
 \begin{enumerate}[a]
 	\item %a
+	To check whether the data has been corrupted, the receiver checks if D concatenated with R is divisible by G. If it is, the data has been received correctly.
+
+	Example with $D = 1001010101, R = 0111$, G = 1001:
+
+	\begin{tabular}{ccccccccccccccc}
+		& 1 & 0 & 0 & 1 & 0 & 1 & 0 & 1 & 0 & 1 & 0 & 1 & 1 & 1\\
+		$\oplus$ & 1 & 0 & 0 & 1\\\cline{2-5}
+		& 0 & 0 & 0 & 0 & 0 & 1 & 0 & 1 & 0\\
+		&&&&& $\oplus$ & 1 & 0 & 0 & 1\\\cline{7-10}
+		&&&&&& 0 & 0 & 1 & 1 & 1 & 0\\
+		&&&&&&& $\oplus$ & 1 & 0 & 0 & 1\\\cline{9-12}
+		&&&&&&&& 0 & 1 & 1 & 1 & 1\\
+		&&&&&&&& $\oplus$ & 1 & 0 & 0 & 1\\\cline{10-13}
+		&&&&&&&&& 0 & 1 & 1 & 0 & 1\\
+		&&&&&&&&& $\oplus$ & 1 & 0 & 0 & 1\\\cline{11-14}
+		&&&&&&&&&& \\
+		&&&&&&&&&& 0 & 1 & 0 & 0 & 1\\
+		&&&&&&&&&& $\oplus$ & 1 & 0 & 0 & 1\\\cline{12-15}
+		&&&&&&&&&&& 0 & 0 & 0 & 0\\
+	\end{tabular}
+
+	$DR$ is divisible by $G$ so the packet has not been corrupted.
 	\item %b
 	\item %c
 	\item %d
