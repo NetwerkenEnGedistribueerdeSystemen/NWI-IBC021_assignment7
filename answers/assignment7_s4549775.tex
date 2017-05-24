@@ -49,6 +49,23 @@
 
 	$DR$ is divisible by $G$ so the packet has not been corrupted.
 	\item %b
+	$D = 1001010101, G = 1001$
+
+	\begin{tabular}{cccccccccccccc}
+		& 1 & 0 & 0 & 1 & 0 & 1 & 0 & 1 & 0 & 1 & 0 & 0 & 0\\
+		$\oplus$ & 1 & 0 & 0 & 1\\\cline{2-5}
+		& 0 & 0 & 0 & 0 & 0 & 1 & 0 & 1 & 0\\
+		&&&&& $\oplus$ & 1 & 0 & 0 & 1\\\cline{7-10}
+		&&&&&& 0 & 0 & 1 & 1 & 1 & 0\\
+		&&&&&&& $\oplus$ & 1 & 0 & 0 & 1\\\cline{9-12}
+		&&&&&&&& 0 & 1 & 1 & 1 & 0\\
+		&&&&&&&& $\oplus$ & 1 & 0 & 0 & 1\\\cline{10-13}
+		&&&&&&&&& 0 & 1 & 1 & 1 & 0\\
+		&&&&&&&&& $\oplus$ & 1 & 0 & 0 & 1\\\cline{11-14}
+		&&&&&&&&&& 0 & 1 & 1 & 1\\
+	\end{tabular}
+
+	$R = 0111$
 	\item %c
 	\item %d
 	$D = 1010100000, G = 1001$
